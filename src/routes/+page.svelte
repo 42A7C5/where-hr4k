@@ -127,33 +127,35 @@
   });
 </script>
 
-<div class="h-screen flex">
-  <div class="mx-auto text-center pt-32 md:pt-96">
-    <h1 class="text-4xl">Is the <b>HR4000</b> running now?</h1>
+<div class="h-screen flex px-10 lg:px-0">
+  <div class="mx-auto text-center pt-32 md:pt-32">
+    <h1 class="text-2xl md:text-4xl">Is the <b>HR4000</b> running now?</h1>
     {#if isRunning == true}
-      <h2 class="text-6xl pt-6">Yes!</h2>
-      <h3 class="text-3xl pt-6">Go find that goofy steam horn!</h3>
+      <h2 class="text-4xl md:text-6xl pt-6">Yes!</h2>
+      <h3 class="text-xl md:text-3xl pt-6">Go find that goofy steam horn!</h3>
     {:else if isRunning == false}
-      <h2 class="text-6xl pt-6">No!</h2>
-      <h3 class="text-3xl pt-6">Better luck next time :(</h3>
+      <h2 class="text-4xl md:text-6xl pt-6">No!</h2>
+      <h3 class="text-xl md:text-3xl pt-6">Better luck next time :(</h3>
     {:else}
-      <h2 class="text-6xl pt-6">Loading...</h2>
-      <h3 class="text-3xl pt-6">----</h3>
+      <h2 class="text-4xl md:text-6xl pt-6">Loading...</h2>
+      <h3 class="text-xl md:text-3xl pt-6">----</h3>
     {/if}
     {#if isRunning == true}
-      <p class="text-2xl pt-4">{details}</p>
-      <p class="text-2xl font-semibold pt-2">{next}</p>
+      <p class="text-md md:text-2xl pt-4">{details}</p>
+      <p class="text-lg md:text-2xl font-semibold pt-2">{next}</p>
 
-      <h3 class="text-3xl pt-8 pb-2 underline">Estimated Arrival Times</h3>
+      <h3 class="text-xl md:text-3xl pt-8 pb-2 underline">
+        Estimated Arrival Times
+      </h3>
       {#each singleTrainTimes as singleTrainTime}
-        <div class="text-2xl">
+        <div class="text-md md:text-2xl">
           {singleTrainTime.name} @
           <span class="font-semibold">{singleTrainTime.time}</span>
         </div>
       {/each}
       <br />
     {/if}
-    <div class="text-xl">
+    <div class="text-sm md:text-xl pt-4 pb-12">
       Built by <a class="underline" href="https://samuelsharp.com"
         >Samuel Sharp (@42A7C5)</a
       >
